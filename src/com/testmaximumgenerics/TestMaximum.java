@@ -35,10 +35,28 @@ public class TestMaximum {
         }
         return max;
     }
+    public static void toPrint(String[] stringArray) {
+        for (String element : stringArray) {
+            System.out.println(element);
+        }
+        System.out.println();
+    }
+    public static String compareTo(String[] stringArray)
+    {
+        String max = stringArray[0];
+        for (String element : stringArray) {
+            if (stringArray[1] > max)
+                max = stringArray[1];
+            if (stringArray[2] > max)
+                max = stringArray[2];
+        }
+        return max;
+    }
     public static void main(String[] args)
     {
         Integer[] intArray = {30,50,40};
         Double[] doubleArray = {6.6,7.7,8.8};
+        String[] stringArray = {"Apple","Peach","Banana"};
 
         TestMaximum.toPrint(intArray);
         int maximum_int = TestMaximum.compareTo(intArray);
@@ -46,5 +64,8 @@ public class TestMaximum {
         TestMaximum.toPrint(doubleArray);
         double maximum_float = TestMaximum.compareTo(doubleArray);
         System.out.println("Maximum floating number is:"+maximum_float);
+        TestMaximum.toPrint(stringArray);
+        String maximum_string = TestMaximum.compareTo(stringArray);
+        System.out.println("Maximum integer number is:"+maximum_string);
     }
 }
